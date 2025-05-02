@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme{
+    --color-red-74: hsl(0, 100%, 74%);
+    --color-green-51: hsl(154, 59%, 51%);
+    --color-blue-49: hsl(248, 32%, 49%);
+    --color-darkBlue-26: hsl(249, 10%, 26%);
+    --color-grayisBlue-77: hsl(246, 25%, 77%);
+}
+
+:root{
+    --font: "Poppins", sans-serif;
+}
+
+*{
+    font-family: var(--font);
+}
