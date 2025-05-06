@@ -1,3 +1,4 @@
+import { Input } from '../../components/Input/Input.jsx'
 import imagen from '../../assets/bg-intro-mobile.png'
 import imagepc from '../../assets/bg-intro-desktop.png'
 
@@ -17,10 +18,10 @@ const Home = () => {
                     <p className='px-9 font-light text-grayisBlue-77'><span className='font-semibold text-white'>Try it free 7 days</span> then $20/mo. thereafter</p>
                 </div>
                 <form className='z-100 relative bg-white text-darkBlue-26 p-6 mb-11 rounded-lg shadow-[0px_8px_0px_0px_rgba(0,_0,_0,_0.15)] min-[425px]:mb-25 max-w-130 lg:mb-0'>
-                    <input className='text-sm p-4 border border-gray-300 w-full rounded-md text-gray-700 mb-4' type="text" name="" id="name" placeholder="First Name"/>
-                    <input className='text-sm p-4 border border-gray-300 w-full rounded-md text-gray-700 mb-4' type="text" name="" id="lastName" placeholder="Last Name"/>
-                    <input className='text-sm p-4 border border-gray-300 w-full rounded-md text-gray-700 mb-4' type="email" name="" id="email" placeholder="Email Address"/>
-                    <input className='text-sm p-4 border border-gray-300 w-full rounded-md text-gray-700 mb-4' type="password" name="" id="password" placeholder="Password"/>
+                    <Input placeholder='First Name' type='text' id='name' textError='First Name cannot be empty'/>
+                    <Input placeholder='Last Name' type='text' id='lastName' textError='Last Name cannot be empty'/>
+                    <Input placeholder='Email Address' type='email' id='email' textError='Looks like this is not an Email'/>
+                    <Input placeholder='Password' type='password' id='password' textError='Password cannot be empty'/>
                     <button className='bg-green-51 w-full text-white py-4 rounded-md font-medium mb-4 cursor-pointer border-b-4 border-b-green-600' type="submit" value="">CLAIM YOUR FREE TRIAL</button>
 
                     <p className='text-xs text-center leading-6 text-grayisBlue-77'>By clicking the button, you are agreeing to our<a className='text-red-74 font-semibold' href="#">Terms and Services</a></p>
