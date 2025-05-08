@@ -2,10 +2,14 @@ import { useForm } from 'react-hook-form'
 import errorIcon from '../../assets/icon-error.svg'
 
 const Form = () => {
-    const { register, handleSubmit, formState: {errors} } = useForm();
+    const { register, handleSubmit, formState: { errors, isValid } } = useForm({
+        mode: 'onChange'
+    });
+
     const onSubmit = handleSubmit((data) => {
         console.log(data)
-    })
+    });
+
     return (
         <form onSubmit={onSubmit} className='z-100 relative bg-white text-darkBlue-26 p-6 mb-11 rounded-lg shadow-[0px_8px_0px_0px_rgba(0,_0,_0,_0.15)] min-[425px]:mb-25 max-w-130 lg:mb-0'>
             <div className='relative'>
@@ -50,7 +54,13 @@ const Form = () => {
                     </>
                 }
             </div>
-            <button className='bg-green-51 hover:bg-green-600 w-full text-white py-4 rounded-md font-medium mb-4 cursor-pointer border-b-4 border-b-green-600' type="submit" value="">CLAIM YOUR FREE TRIAL</button>
+            <button 
+                className='bg-green-51 hover:bg-green-600 w-full text-white py-4 rounded-md font-medium mb-4 cursor-pointer border-b-4 border-b-green-600 disabled:opacity-50 disabled:cursor-not-allowed' 
+                type="submit" 
+                disabled={!isValid}
+            >
+                CLAIM YOUR FREE TRIAL
+            </button>
 
             <p className='text-xs text-center leading-6 text-grayisBlue-77'>By clicking the button, you are agreeing to our<a className='text-red-74 font-semibold' href="#">Terms and Services</a></p>
         </form>
